@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>카운트다운</h1>
+    <!-- <p>bye</p> -->
+    <p class='output'>hi</p>
+
+
+    <script>
+        // const output = document.querySelector('.output')
+        // output.innerHTML = ''
+        for (let i=10; i>-1; i--) {
+            const para = document.createElement('p')
+            // ouput.appendChild(para)
+            if (i===0) {
+                para.textContent = 'Blast off!' 
+            } else {
+                para.textContent = `카운트다운 ${i}`
+            }
+            document.body.appendChild(para)
+        }
+        
+        let i = 10;
+
+        while(i >= 0) {
+        const para = document.createElement('p');
+        if(i === 10) {
+            para.textContent = 'Countdown ' + i;
+        } else if(i === 0) {
+            para.textContent = 'Blast off!';
+        } else {
+            para.textContent = i;
+        }
+
+        document.body.appendChild(para);
+
+        i--;
+        }
+        
+    </script>
+</body>
+</html>

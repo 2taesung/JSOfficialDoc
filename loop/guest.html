@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Live output</h1>
+
+    <h2 class="admitted">Admit:</h2>
+    <h2 class="Refuse">Refuse:</h2>
+    
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+        for (let p of people) {
+            if (p === 'Phil' || p === 'Lola') {
+                let r = document.querySelector('.Refuse')
+                r.textContent += p + ', '
+            } else {
+                let r = document.querySelector('.admitted')
+                r.textContent += p + ', '
+            }
+        }
+        let c = document.querySelector('.Refuse')
+        c.textContent = c.textContent.slice(0,c.textContent.length-2) + '.';
+        console.log(c)
+    </script>
+</body>
+</html>
