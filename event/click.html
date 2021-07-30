@@ -5,16 +5,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    div {
+      border: 2px black solid;
+      width: 50px;
+      height: 50px;
+    }
+
+  </style>
 </head>
 <body>
   <button id="Click">Change Color</button>
 
   <button id="random">Random Color</button>
+  <button id="divcolor">DIV Color</button>
+
+  <br>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
   <script>
     let be = document.getElementById('Click')
 
-    be.addEventListener('click', function(e) {
+    be.addEventListener('dblclick', function(e) {
       document.bgColor = 'red'
+      console.log(e.type)
     })
 
     let btn = document.getElementById('random')
@@ -22,11 +39,26 @@
     function random(number) {
       return Math.floor(Math.random() * (number+1))
     }
-    btn.onclick = function() {
+    function bgChange(evt) {
       const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')'
 
       document.body.style.backgroundColor = rndCol
+      console.log(evt)
+      return rndCol
     }
+
+    let divcolorbtn = document.querySelectorAll('div')
+    console.log(divcolorbtn)
+
+    
+    for (let i=0; i<divcolorbtn.length; i++) {
+      console.log(divcolorbtn[i])
+      divcolorbtn[i].addEventListener('click', function(e){
+        e.target.style.backgroundColor = bgChange()
+      })
+    }
+
+    btn.addEventListener('click', bgChange)
   </script>
 </body>
 </html>
