@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>실험</h1>
+    <div>네모</div>
+    <canvas width="320" height="240">
+        <p>Your browser doesn't support canvas. Boo hoo!</p>
+    </canvas>
+    <canvas width="320" height="200" id="canvas"></canvas>
+
+    <script>
+    const canvas = document.getElementById('canvas');
+    console.log(canvas)
+    const ctx = canvas.getContext('2d');
+    
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 150, 100);
+    // const divv = document.getElementsByClassName('div')
+    // console.log(divv)
+
+    </script>
+</body>
+</html>
