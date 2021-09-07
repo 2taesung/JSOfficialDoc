@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bouncing balls</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      html, body {
+        margin: 0;
+      }
+
+      html {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        height: 100%;
+      }
+
+      body {
+        overflow: hidden;
+        height: inherit;
+      }
+
+      h1 {
+        font-size: 2rem;
+        letter-spacing: -1px;
+        position: absolute;
+        margin: 0;
+        top: -4px;
+        right: 5px;
+
+        color: transparent;
+        text-shadow: 0 0 4px white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>bouncing balls</h1>
+    <canvas></canvas>
+
+    <script src="main.js"></script>
+  </body>
+  <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const width = canvas.width = window.innerWidth;
+    const height = canvas.height = window.innerHeight;
+
+    // function to generate random number
+
+    function random(min, max) {
+      const num = Math.floor(Math.random() * (max - min + 1)) + min;
+      return num;
+    }
+
+    function loop() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+      ctx.fillRect(0, 0, width, height);
+
+      for(let i = 0; i < balls.length; i++) {
+        balls[i].draw();
+        balls[i].update();
+        balls[i].collisionDetect();
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+  </script>
+</html>
